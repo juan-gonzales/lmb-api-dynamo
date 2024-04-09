@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+      "target": "ES2017",
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "outDir": "./dist",
+      "strict": true,
+      "removeComments": true,
+      "declaration": false,
+      //"noUnusedLocals": true,
+      // "noUnusedParameters": true,
+      "alwaysStrict": true
+  },
+  "include": [
+      "src/**/*.ts"
+  ]
+}

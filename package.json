@@ -1,0 +1,39 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "lambda prototipo",
+  "main": "index.js",
+  "scripts": {
+    "build:lin": "rm -rf dist && tsc && find dist -name '*.js' -exec terser {} -o {}.min.js \\; -exec rm {} \\; -exec mv {}.min.js {} \\;",
+    "build:win": "rmdir /s /q dist && tsc && for %f in (dist\\*.js) do terser %f -o dist\\%~nf.min.js && del %f && ren dist\\%~nf.min.js %~nf.js && for /r dist %f in (*.js) do terser %f -o %~dpnf.min.js && del %f && ren %~dpnf.min.js %~nxf",
+    "build-min:win": "rmdir /s /q dist && tsc",
+    "test:lmb": "C:/\"Program Files\"/Amazon/AWSSAMCLI/bin/sam.cmd local invoke -t ./template/template.yaml MiFuncionLambda --event ./template/event.json",
+    "test": "jest"
+  },
+  "author": "juan gonzales",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.136",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^29.5.12",
+    "@types/nanoid": "^3.0.0",
+    "@types/node": "^20.12.4",
+    "@types/pino": "^7.0.5",
+    "@types/pino-pretty": "^5.0.0",
+    "@types/uuid": "^9.0.8",
+    "jest": "^29.7.0",
+    "terser": "^5.30.2",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1593.0",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "pino": "^8.19.0",
+    "pino-pretty": "^11.0.0",
+    "uuid": "^9.0.1"
+  }
+}

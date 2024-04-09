@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports.handler=void 0;const service_1=require("./dist");const handler=async event=>(0,service_1.handleRequest)(event);exports.handler=handler;

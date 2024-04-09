@@ -1,0 +1,14 @@
+# Ignorar la carpeta de dependencias de Node.js
+node_modules/
+template/
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de configuración local
+.env
+
+# Ignorar la carpeta de archivos compilados
+build/
+dist/
+coverage/
